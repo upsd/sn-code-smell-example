@@ -11,8 +11,12 @@ public class SocialNetwork {
         this.console = console;
     }
 
-    public void post(String username, String message) {
-        posts.add(message);
+    public void execute(String command, String username, String[] args) {
+
+        if (command.equals("post")) {
+            posts.add(args[0]);
+        }
+
     }
 
     public void read(String username) {
