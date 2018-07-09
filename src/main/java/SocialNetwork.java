@@ -16,20 +16,21 @@ public class SocialNetwork {
 
     public void execute(String command, String username, String[] args) {
 
-        if (command.equals("post")) {
+        ;
+        if (command.equals(PostCommandTranslator.translate("post"))) {
             if (username == username.trim()) {
                 postHandler.addPost(args[0]);
             }
         }
 
-        if (command.equals("read")) {
+        if (command.equals(PostCommandTranslator.translate("read"))) {
             if (username == username.trim()) {
                 TimeDifferenceCalculator timeDifferenceCalculator = new TimeDifferenceCalculator();
                 postHandler.getAllPosts().forEach(p -> console.printLine(p + " " + timeDifferenceCalculator.difference().convert().asText()));
             }
         }
 
-        if (command.equals("wall")) {
+        if (command.equals(PostCommandTranslator.translate("wall"))) {
             if (username == username.trim()) {
                 TimeDifferenceCalculator timeDifferenceCalculator = new TimeDifferenceCalculator();
                 postHandler.getAllPosts().forEach(p -> console.printLine(username + " - " + p + " " + timeDifferenceCalculator.difference().convert().asText()));
