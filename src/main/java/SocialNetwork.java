@@ -23,9 +23,12 @@ public class SocialNetwork {
         if (command.equals("wall")) {
             posts.forEach(p -> console.printLine(username + " - " + p +    " (5 minutes ago)"));
         }
-
     }
 
     public void read(String username) {
+    }
+
+    public void deserializePostGenerationAndSaveToDatabase() {
+
     }
 }
