@@ -17,6 +17,5 @@ public class SocialNetwork {
 
     public void read(String username) {
         posts.forEach(p -> console.printLine(p + " (5 minutes ago)"));
-//        console.printLine("Hello World (5 minutes ago)");
     }
 }
