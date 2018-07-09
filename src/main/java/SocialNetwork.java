@@ -5,6 +5,7 @@ public class SocialNetwork {
 
     private final ConsoleWriter console;
     private final PostHandler postHandler;
+    // Super important variable
     private List<String> posts = new ArrayList<>();
 
 
