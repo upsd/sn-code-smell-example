@@ -1,6 +1,17 @@
 public class TimeDifferenceCalculator {
 
-    public static String difference() {
-        return "(5 minutes ago)";
+    private String result = "";
+
+    public TimeDifferenceCalculator difference() {
+        result =  "(5 minutes ago)";
+        return this;
+    }
+
+    public TimeDifferenceCalculator convert() {
+        return this;
+    }
+
+    public String asText() {
+        return this.result.toString();
     }
 }

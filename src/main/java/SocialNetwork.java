@@ -24,13 +24,15 @@ public class SocialNetwork {
 
         if (command.equals("read")) {
             if (username == username.trim()) {
-                postHandler.getAllPosts().forEach(p -> console.printLine(p + " " + TimeDifferenceCalculator.difference()));
+                TimeDifferenceCalculator timeDifferenceCalculator = new TimeDifferenceCalculator();
+                postHandler.getAllPosts().forEach(p -> console.printLine(p + " " + timeDifferenceCalculator.difference().convert().asText()));
             }
         }
 
         if (command.equals("wall")) {
             if (username == username.trim()) {
-                postHandler.getAllPosts().forEach(p -> console.printLine(username + " - " + p + " " + TimeDifferenceCalculator.difference()));
+                TimeDifferenceCalculator timeDifferenceCalculator = new TimeDifferenceCalculator();
+                postHandler.getAllPosts().forEach(p -> console.printLine(username + " - " + p + " " + timeDifferenceCalculator.difference().convert().asText()));
             }
         }
     }
