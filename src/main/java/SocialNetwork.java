@@ -23,13 +23,13 @@ public class SocialNetwork {
 
         if (command.equals("read")) {
             if (username == username.trim()) {
-                postHandler.getAllPosts().forEach(p -> console.printLine(p + " (5 minutes ago)"));
+                postHandler.getAllPosts().forEach(p -> console.printLine(p + " " + TimeDifferenceCalculator.difference()));
             }
         }
 
         if (command.equals("wall")) {
             if (username == username.trim()) {
-                postHandler.getAllPosts().forEach(p -> console.printLine(username + " - " + p +    " (5 minutes ago)"));
+                postHandler.getAllPosts().forEach(p -> console.printLine(username + " - " + p + " " + TimeDifferenceCalculator.difference()));
             }
         }
     }
