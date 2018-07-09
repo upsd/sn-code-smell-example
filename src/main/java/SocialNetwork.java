@@ -41,7 +41,8 @@ public class SocialNetwork {
     }
 
     public void deserializePostGenerationAndSaveToDatabase() {
-
+        Database database = new Database("blah", "pwd", "name", "unicode", 26);
+        database.save("something");
     }
 
     public boolean isUserTheSame(String userOne, String userTwo) {
