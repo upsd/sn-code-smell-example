@@ -16,15 +16,21 @@ public class SocialNetwork {
     public void execute(String command, String username, String[] args) {
 
         if (command.equals("post")) {
-            postHandler.addPost(args[0]);
+            if (username == username.trim()) {
+                postHandler.addPost(args[0]);
+            }
         }
 
         if (command.equals("read")) {
-            postHandler.getAllPosts().forEach(p -> console.printLine(p + " (5 minutes ago)"));
+            if (username == username.trim()) {
+                postHandler.getAllPosts().forEach(p -> console.printLine(p + " (5 minutes ago)"));
+            }
         }
 
         if (command.equals("wall")) {
-            postHandler.getAllPosts().forEach(p -> console.printLine(username + " - " + p +    " (5 minutes ago)"));
+            if (username == username.trim()) {
+                postHandler.getAllPosts().forEach(p -> console.printLine(username + " - " + p +    " (5 minutes ago)"));
+            }
         }
     }
 
