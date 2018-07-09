@@ -1,6 +1,9 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -41,5 +44,12 @@ public class SocialNetworkShould {
 
         verify(console).printLine("Alice - Hello world (5 minutes ago)");
         verify(console).printLine("Alice - Hello again (5 minutes ago)");
+    }
+
+    @Test
+    public void check_users_are_the_same() {
+        boolean areTheSame = socialNetwork.isUserTheSame("Alice", "Alice");
+
+        assertThat(areTheSame, is(true));
     }
 }
