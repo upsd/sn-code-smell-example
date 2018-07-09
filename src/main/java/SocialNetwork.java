@@ -17,9 +17,12 @@ public class SocialNetwork {
             posts.add(args[0]);
         }
 
+        if (command.equals("read")) {
+            posts.forEach(p -> console.printLine(p + " (5 minutes ago)"));
+        }
+
     }
 
     public void read(String username) {
-        posts.forEach(p -> console.printLine(p + " (5 minutes ago)"));
     }
 }

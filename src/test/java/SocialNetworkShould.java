@@ -18,7 +18,7 @@ public class SocialNetworkShould {
     @Test
     public void post_single_message_and_read_for_a_user() {
         socialNetwork.execute("post", "Alice", new String[]{"Hello world"});
-        socialNetwork.read("Alice");
+        socialNetwork.execute("read", "Alice", new String[]{});
 
         verify(console).printLine("Hello world (5 minutes ago)");
     }
@@ -27,7 +27,7 @@ public class SocialNetworkShould {
     public void post_and_read_multiple_messages_for_a_user() {
         socialNetwork.execute("post", "Alice", new String[]{"Hello world"});
         socialNetwork.execute("post", "Alice", new String[]{"Hello again"});
-        socialNetwork.read("Alice");
+        socialNetwork.execute("read", "Alice", new String[]{});
 
         verify(console).printLine("Hello world (5 minutes ago)");
         verify(console).printLine("Hello again (5 minutes ago)");
