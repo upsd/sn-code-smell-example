@@ -3,7 +3,7 @@ import java.util.List;
 
 public class PostHandler {
 
-    private final List<String> posts;
+    private final List<String> posts;   // for storing posts
     private final PostStorer postStorer;
 
     public PostHandler() {
