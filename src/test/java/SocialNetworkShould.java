@@ -1,18 +1,35 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class SocialNetworkShould {
+
+    private ConsoleWriter console;
+    private SocialNetwork socialNetwork;
+
+    @Before
+    public void setup() {
+        console = mock(ConsoleWriter.class);
+        socialNetwork = new SocialNetwork(console);
+    }
     
     @Test
     public void post_single_message_and_read_for_a_user() {
-        ConsoleWriter console = mock(ConsoleWriter.class);
-        SocialNetwork socialNetwork = new SocialNetwork(console);
-
         socialNetwork.post("Alice", "Hello world");
         socialNetwork.read("Alice");
 
-        verify(console).printLine("Hello World (5 minutes ago)");
+        verify(console).printLine("Hello world (5 minutes ago)");
+    }
+
+    @Test
+    public void post_and_read_multiple_messages_for_a_user() {
+        socialNetwork.post("Alice", "Hello world");
+        socialNetwork.post("Alice", "Hello again");
+        socialNetwork.read("Alice");
+
+        verify(console).printLine("Hello world (5 minutes ago)");
+        verify(console).printLine("Hello again (5 minutes ago)");
     }
 }
