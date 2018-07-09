@@ -32,4 +32,14 @@ public class SocialNetworkShould {
         verify(console).printLine("Hello world (5 minutes ago)");
         verify(console).printLine("Hello again (5 minutes ago)");
     }
+    
+    @Test
+    public void show_wall_for_a_user() {
+        socialNetwork.execute("post", "Alice", new String[]{"Hello world"});
+        socialNetwork.execute("post", "Alice", new String[]{"Hello again"});
+        socialNetwork.execute("wall", "Alice", new String[]{});
+
+        verify(console).printLine("Alice - Hello world (5 minutes ago)");
+        verify(console).printLine("Alice - Hello again (5 minutes ago)");
+    }
 }
