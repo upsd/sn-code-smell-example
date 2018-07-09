@@ -1,9 +1,7 @@
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -46,7 +44,7 @@ public class SocialNetworkShould {
         verify(console).printLine("Alice - Hello world (5 minutes ago)");
         verify(console).printLine("Alice - Hello again (5 minutes ago)");
     }
-    
+
     @Test
     public void show_content_for_a_given_user() {
         socialNetwork.execute("post", "Alice", new String[]{"Hello world"});
