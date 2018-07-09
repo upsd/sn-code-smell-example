@@ -6,7 +6,7 @@ import static org.mockito.Mockito.verify;
 public class SocialNetworkShould {
     
     @Test
-    public void post_and_read_message_for_a_user() {
+    public void post_single_message_and_read_for_a_user() {
         ConsoleWriter console = mock(ConsoleWriter.class);
         SocialNetwork socialNetwork = new SocialNetwork(console);
 
